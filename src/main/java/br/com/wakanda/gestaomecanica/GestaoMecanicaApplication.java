@@ -1,4 +1,4 @@
-package dev.projetoPessoal.wakanda.gestaomecanica;
+package br.com.wakanda.gestaomecanica;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
