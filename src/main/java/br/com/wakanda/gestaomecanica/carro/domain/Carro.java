@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import br.com.wakanda.gestaomecanica.carro.application.api.CarroRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,15 +41,14 @@ public class Carro {
 	
 	private LocalDateTime dataHoraDoCadastro;
 
-	public Carro(@NotBlank String placa, @NotBlank String marca, @NotBlank String modelo, @NotBlank String motor,
-			@NotBlank String ano, @NotBlank String cor, @NotNull Boolean eletronico) {
-		this.placa = placa;
-		this.marca = marca;
-		this.modelo = modelo;
-		this.motor = motor;
-		this.ano = ano;
-		this.cor = cor;
-		this.eletronico = eletronico;
+	public Carro(CarroRequest carroRequest) {
+		this.placa = carroRequest.getPlaca();
+		this.marca = carroRequest.getMarca();
+		this.modelo = carroRequest.getModelo();
+		this.motor = carroRequest.getMotor();
+		this.ano = carroRequest.getAno();
+		this.cor = carroRequest.getCor();
+		this.eletronico = carroRequest.getEletronico();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
 	
