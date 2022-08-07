@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class GestaoMecanicaApplication {
-	
+	//1º Test!
 	@GetMapping
 	public String getHomeTeste() {
-		 
+		
 		return "<h1>Primeiro passo bem sucedido Joan!</h1>";
 	}
 
