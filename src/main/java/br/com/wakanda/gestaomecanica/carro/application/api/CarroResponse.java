@@ -1,5 +1,10 @@
 package br.com.wakanda.gestaomecanica.carro.application.api;
 
-public class CarroResponse {
+import java.util.UUID;
 
+import lombok.Value;
+
+@Value
+public class CarroResponse {
+	private UUID idCarro;
 }
