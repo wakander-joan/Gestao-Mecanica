@@ -20,9 +20,7 @@ public class CarroApplicationService implements CarroService {
 		log.info("[inicia] CarroApplicationService - criaCarro");
 		Carro carro = carroRepository.salva(new Carro(carroRequest));
 		log.info("[finaliza] CarroApplicationService - criaCarro");
-		return CarroResponse.builder()
-				.idCarro(carro.getIdCarro())
-				.build();
+		return CarroResponse.builder().idCarro(carro.getIdCarro()).placa(carro.getPlaca()) .build();
 	}
 
 }

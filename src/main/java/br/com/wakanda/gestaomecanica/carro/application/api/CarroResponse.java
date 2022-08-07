@@ -9,4 +9,5 @@ import lombok.Value;
 @Builder
 public class CarroResponse {
 	private UUID idCarro;
+	private String placa;
 }
