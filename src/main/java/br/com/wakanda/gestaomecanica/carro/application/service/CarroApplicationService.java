@@ -29,8 +29,9 @@ public class CarroApplicationService implements CarroService {
 	@Override
 	public List<CarroListResponse> buscaTodosCarros() {
 		log.info("[inicia] CarroApplicationService - buscaTodosCarros");
+		List<Carro> carros = carroRepository.buscaTodosCarros();
 		log.info("[finaliza] CarroApplicationService - buscaTodosCarros");
-		return null;
+		return CarroListResponse.converte(carros) ;
 	}
 
 }

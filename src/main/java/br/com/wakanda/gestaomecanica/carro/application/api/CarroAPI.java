@@ -21,5 +21,5 @@ public interface CarroAPI {
 	
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
-	List <CarroListResponse> getTodosCarros ();
+	List <CarroListResponse> getTodosCarros();
 }

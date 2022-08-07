@@ -1,7 +1,10 @@
 package br.com.wakanda.gestaomecanica.carro.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
+import br.com.wakanda.gestaomecanica.carro.application.api.CarroListResponse;
 import br.com.wakanda.gestaomecanica.carro.application.repository.CarroRepository;
 import br.com.wakanda.gestaomecanica.carro.domain.Carro;
 import lombok.RequiredArgsConstructor;
@@ -23,4 +26,11 @@ public class CarroInfraRepository implements CarroRepository {
 		return carro;
 	}
 
+	@Override
+	public List<Carro> buscaTodosCarros() {
+		log.info("[inicia] CarroInfraRepository - buscaTodosCarros");
+		List<Carro> todosCarros = carroSpringDataJPARepository.findAll();
+		log.info("[finaliza] CarroInfraRepository - buscaTodosCarros");
+		return todosCarros;
+	}
 }
