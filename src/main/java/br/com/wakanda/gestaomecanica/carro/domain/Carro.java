@@ -3,7 +3,10 @@ package br.com.wakanda.gestaomecanica.carro.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -17,6 +20,8 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Carro {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", updatable = false, unique = true, nullable = false)
 	private UUID idCarro;
 	@NotBlank
 	private String placa;
@@ -37,7 +42,6 @@ public class Carro {
 
 	public Carro(@NotBlank String placa, @NotBlank String marca, @NotBlank String modelo, @NotBlank String motor,
 			@NotBlank String ano, @NotBlank String cor, @NotNull Boolean eletronico) {
-		this.idCarro = UUID.randomUUID();
 		this.placa = placa;
 		this.marca = marca;
 		this.modelo = modelo;
