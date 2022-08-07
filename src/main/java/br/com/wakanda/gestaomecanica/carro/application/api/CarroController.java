@@ -1,5 +1,7 @@
 package br.com.wakanda.gestaomecanica.carro.application.api;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.wakanda.gestaomecanica.carro.application.service.CarroService;
@@ -19,6 +21,14 @@ public class CarroController implements CarroAPI {
 		CarroResponse carroCriado =  carroService.criaCarro(carroRequest);
 		log.info("[finaliza] CarroController - postCarro");
 		return carroCriado;
+	}
+
+	@Override
+	public List<CarroListResponse> getTodosCarros() {
+		log.info("[inicia] CarroController - getTodosCarros");
+		List<CarroListResponse> carros = carroService.buscaTodosCarros();
+		log.info("[finaliza] CarroController - getTodosCarros");
+		return carros;
 	}
 
 }
