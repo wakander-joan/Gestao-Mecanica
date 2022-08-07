@@ -1,5 +1,7 @@
 package br.com.wakanda.gestaomecanica.carro.application.api;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,5 +14,5 @@ import org.springframework.web.bind.annotation.RestController;
 public interface CarroAPI {
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	CarroResponse postCarro(@RequestBody CarroRequest carroRequest);
+	CarroResponse postCarro(@Valid @RequestBody CarroRequest carroRequest);
 }
