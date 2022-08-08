@@ -43,8 +43,9 @@ public class CarroController implements CarroAPI {
 	public CarroDetalhadoResponse getCarroPorPlaca(String placa) {
 		log.info("[inicia] CarroController - getCarroPorPlaca");
 		log.info("[placa] {}", placa);
+		CarroDetalhadoResponse carroDetalhado = carroService.buscaCarroPorPlaca(placa);
 		log.info("[finaliza] CarroController - getCarroPorPlaca");
-		return null;
+		return carroDetalhado;
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import br.com.wakanda.gestaomecanica.carro.application.api.CarroDetalhadoResponse;
 import br.com.wakanda.gestaomecanica.carro.application.api.CarroListResponse;
 import br.com.wakanda.gestaomecanica.carro.application.api.CarroRequest;
 import br.com.wakanda.gestaomecanica.carro.application.api.CarroResponse;
@@ -32,6 +33,12 @@ public class CarroApplicationService implements CarroService {
 		List<Carro> carros = carroRepository.buscaTodosCarros();
 		log.info("[finaliza] CarroApplicationService - buscaTodosCarros");
 		return CarroListResponse.converte(carros) ;
+	}
+	@Override
+	public CarroDetalhadoResponse buscaCarroPorPlaca(String placa) {
+		log.info("[inicia] CarroApplicationService - buscaCarroPorPlaca");
+		log.info("[finaliza] CarroApplicationService - buscaCarroPorPlaca");
+		return null;
 	}
 
 }
