@@ -31,4 +31,20 @@ public class CarroController implements CarroAPI {
 		return carros;
 	}
 
+//	@Override
+//	public CarroDetalhadoResponse getCarroPorId(UUID idCarro) {
+//		log.info("[inicia] CarroController - getCarroPorId");
+//		log.info("[idCarro] {}", idCarro);
+//		log.info("[finaliza] CarroController - getCarroPorId");
+//		return null;
+//	}
+
+	@Override
+	public CarroDetalhadoResponse getCarroPorPlaca(String placa) {
+		log.info("[inicia] CarroController - getCarroPorPlaca");
+		log.info("[placa] {}", placa);
+		log.info("[finaliza] CarroController - getCarroPorPlaca");
+		return null;
+	}
+
 }

@@ -15,7 +15,9 @@ public class CarroListResponse {
 	private String modelo;
 	
 	public static List<CarroListResponse> converte(List<Carro> carros) {
-		return carros.stream().map(c -> new CarroListResponse(c)).collect(Collectors.toList());
+		return carros.stream()
+				.map(CarroListResponse:: new )
+				.collect(Collectors.toList());
 	}
 
 	public CarroListResponse(Carro carro) {
