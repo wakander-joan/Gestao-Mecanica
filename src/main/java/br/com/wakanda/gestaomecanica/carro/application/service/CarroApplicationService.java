@@ -37,8 +37,9 @@ public class CarroApplicationService implements CarroService {
 	@Override
 	public CarroDetalhadoResponse buscaCarroPorPlaca(String placa) {
 		log.info("[inicia] CarroApplicationService - buscaCarroPorPlaca");
+		Carro carro = carroRepository.buscaCarroPorPlaca(placa);
 		log.info("[finaliza] CarroApplicationService - buscaCarroPorPlaca");
-		return null;
+		return new CarroDetalhadoResponse(carro);
 	}
 
 }
